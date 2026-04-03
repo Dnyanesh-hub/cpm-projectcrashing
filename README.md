@@ -36,18 +36,7 @@ cd frontend && npm run dev
 
 ---
 
-## 🐳 Docker (Production)
 
-```bash
-# Build & start both services
-docker-compose up --build
-
-# App → http://localhost
-# API → http://localhost:3001
-
-# Stop
-docker-compose down
-```
 
 ---
 
