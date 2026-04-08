@@ -3,8 +3,10 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import apiRouter from './routes/api';
+import { Request, Response } from 'express';
 
 const app = express();
+
 const PORT = process.env.PORT || 3001;
 
 // Middleware
@@ -33,6 +35,9 @@ app.use((_req, res) => {
 app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   console.error(err.stack);
   res.status(500).json({ success: false, error: 'Internal Server Error' });
+});
+app.get("/", (_req: Request, res: Response) => {
+  res.send("OK");
 });
 
 app.listen(PORT, () => {
