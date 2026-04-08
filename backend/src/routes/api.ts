@@ -52,7 +52,7 @@ router.post('/analyze', [
 
   try {
     const { activities } = req.body;
-    const result = CrashingEngine.analyzeNetwork(activities);
+    const result = CrashingEngine.optimize(activities);
     return res.json({ success: true, data: result });
   } catch (err: any) {
     return res.status(400).json({ success: false, error: err.message });
